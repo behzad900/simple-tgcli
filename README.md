@@ -45,17 +45,14 @@ this is for send message with channel :
                     $v = array_merge($res, $resb, $resa);
                     return $v;
       }
-          
-          
-          
+
+
 and this for send with group
-                public function multiTaskMakerG($phones, $msg)
-          {
 
-                    //          $res = array();
-                    for ($i = 0; $i <= count($phones) - 1; $i++) {
 
-                              $g = $this->MakeRandomGroupName(8);
+  public function multiTaskMakerG($phones, $msg)
+  {
+  $g = $this->MakeRandomGroupName(8);
                               $h = $g;
                               $p = $phones[$i];
 
@@ -68,6 +65,6 @@ and this for send with group
                     }
                     $v = array_merge($res, $resa, $resb);
                     return $v;
-          }
+   }
 
 if you have question msg to me in telegram username @behzadz
