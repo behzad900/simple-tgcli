@@ -6,29 +6,29 @@ this is class connect with nc to telegram-socket and run execute very fast you c
 this is for send batch message :
 
     public function multiTaskMakerMsg($phones, $msg)
-          {
-
-                    //          $res = array();
-                    for ($i = 0; $i <= count($phones) - 1; $i++) {
+    {
+     
+                             for ($i = 0; $i <= count($phones) - 1; $i++) {
 
                               $p          = $phones[$i];
                               $print_name = $p . '_' . $p;
 
                               $res[] = "msg $print_name $msg";
 
-                              //          sleep(1);
-                    }
-                    return $res;
-          }
+                  
+                              }
+                
+         return $res;
+    }
 
 this is for send message with channel :
 
 
   public function multiTaskMakerC($phones, $msg, $channelname)
-          {
-    $res = array("create_channel $channelname $channelname", "add_contact 00989383381119 behzad mon", "channel_invite                     $channelname behzad_mon", "channel_set_admin $channelname behzad_mon 1");
-                    //          $res = array();
-                    for ($i = 0; $i <= count($phones); $i++) {
+      {
+           $res = array("create_channel $channelname $channelname", "add_contact 00989383381119 behzad mon", "channel_invite                      $channelname behzad_mon", "channel_set_admin $channelname behzad_mon 1");
+           $res = array();
+             for ($i = 0; $i <= count($phones); $i++) {
 
                               $g = $channelname;
                               $p = $phones[$i];
@@ -38,12 +38,12 @@ this is for send message with channel :
                               $resb[] = "history $print_name 10";
                               $resa[] = "channel_invite $channelname $print_name";
 
-                              //          $resb[] = "msg $h $msg";
+                              $resb[] = "msg $h $msg";
 
                     }
                     $v = array_merge($res, $resb, $resa);
                     return $v;
-          }
+      }
           
           
           
